@@ -8,7 +8,7 @@
 
 <meta name="author" content="Laurens van der Maaten">
 <meta name="author" content="Geoffrey Hinton">
-<meta name="dcterms.date" content="2022-12-18">
+<meta name="dcterms.date" content="2022-12-20">
 <meta name="keywords" content="visualization, dimensionality reduction, manifold learning, embedding algorithms, multidimensional scaling">
 <meta name="description" content="This page is a reworking of the original t-SNE article using the Computo template. It aims to help authors submitting to the journal by using some advanced formatting features. We warmly thank the authors of t-SNE and the editor of JMLR for allowing us to use their work to illustrate the Computo spirit.">
 
@@ -201,7 +201,7 @@ ISSN 2824-7795</p>
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">December 18, 2022</p>
+        <p class="date">December 20, 2022</p>
       </div>
     </div>
                                     
@@ -548,7 +548,7 @@ fit_transform(array([[0., ..., 0.],
        [0., ..., 0.]]))</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>____________________________________________________fit_transform - 8.9s, 0.1min
+<pre><code>____________________________________________________fit_transform - 7.4s, 0.1min
 ________________________________________________________________________________
 [Memory] Calling sklearn.manifold._mds.fit_transform...
 fit_transform(array([[0., ..., 0.],
@@ -560,7 +560,7 @@ fit_transform(array([[0., ..., 0.],
   warnings.warn(</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>__________________________________________________fit_transform - 106.9s, 1.8min</code></pre>
+<pre><code>___________________________________________________fit_transform - 79.4s, 1.3min</code></pre>
 </div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>Text(0.5, 1.0, 'Visualization by Sammon mapping.')</code></pre>
@@ -630,7 +630,7 @@ fit_transform(array([[0., ..., 0.],
        [0., ..., 0.]]))</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>____________________________________________________fit_transform - 2.2s, 0.0min
+<pre><code>____________________________________________________fit_transform - 1.9s, 0.0min
 ________________________________________________________________________________
 [Memory] Calling sklearn.manifold._locally_linear.fit_transform...
 fit_transform(array([[0., ..., 0.],
@@ -638,7 +638,7 @@ fit_transform(array([[0., ..., 0.],
        [0., ..., 0.]]))</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>____________________________________________________fit_transform - 0.4s, 0.0min</code></pre>
+<pre><code>____________________________________________________fit_transform - 0.2s, 0.0min</code></pre>
 </div>
 <div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>Text(0.5, 1.0, 'Visualization by LLE.')</code></pre>
@@ -771,7 +771,7 @@ fit_transform(array([[0.309917, ..., 0.157025],
        [0.516529, ..., 0.384298]], dtype=float32))</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>____________________________________________________fit_transform - 2.0s, 0.0min
+<pre><code>____________________________________________________fit_transform - 1.6s, 0.0min
 ________________________________________________________________________________
 [Memory] Calling sklearn.manifold._mds.fit_transform...
 fit_transform(array([[0.309917, ..., 0.157025],
@@ -783,7 +783,7 @@ fit_transform(array([[0.309917, ..., 0.157025],
   warnings.warn(</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>____________________________________________________fit_transform - 3.6s, 0.1min
+<pre><code>____________________________________________________fit_transform - 2.1s, 0.0min
 ________________________________________________________________________________
 [Memory] Calling sklearn.manifold._isomap.fit_transform...
 fit_transform(array([[0.309917, ..., 0.157025],
@@ -799,7 +799,7 @@ fit_transform(array([[0.309917, ..., 0.157025],
        [0.516529, ..., 0.384298]], dtype=float32))</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>____________________________________________________fit_transform - 0.2s, 0.0min</code></pre>
+<pre><code>____________________________________________________fit_transform - 0.1s, 0.0min</code></pre>
 </div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>Text(0.5, 1.0, 'Visualization by LLE.')</code></pre>
