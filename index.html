@@ -2,13 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.56">
+<meta name="generator" content="quarto-1.3.78">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Laurens van der Maaten">
 <meta name="author" content="Geoffrey Hinton">
-<meta name="dcterms.date" content="2022-12-25">
+<meta name="dcterms.date" content="2023-01-01">
 <meta name="keywords" content="visualization, dimensionality reduction, manifold learning, embedding algorithms, multidimensional scaling">
 <meta name="description" content="This page is a reworking of the original t-SNE article using the Computo template. It aims to help authors submitting to the journal by using some advanced formatting features. We warmly thank the authors of t-SNE and the editor of JMLR for allowing us to use their work to illustrate the Computo spirit.">
 
@@ -201,7 +201,7 @@ ISSN 2824-7795</p>
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">December 25, 2022</p>
+        <p class="date">January 1, 2023</p>
       </div>
     </div>
                                     
@@ -450,8 +450,6 @@ y_j)(1+\|y_i - y_j\|^2)^{-1}\,.
 <section id="sec-results" class="level2" data-number="4.3">
 <h2 data-number="4.3" class="anchored" data-anchor-id="sec-results"><span class="header-section-number">4.3</span> Results</h2>
 <div class="cell" data-execution_count="1">
-<details open="">
-<summary>Hide/Show the code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">###############################################################################</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Figure 2. Visualization by t-SNE and Sammon mapping</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">###############################################################################</span></span>
@@ -535,7 +533,6 @@ y_j)(1+\|y_i - y_j\|^2)^{-1}\,.
 <span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a>ax.set_xticks([])</span>
 <span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a>ax.set_yticks([])</span>
 <span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Visualization by Sammon mapping."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>________________________________________________________________________________
 [Memory] Calling sklearn.manifold._t_sne.fit_transform...
@@ -544,7 +541,7 @@ fit_transform(array([[0., ..., 0.],
        [0., ..., 0.]]))</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>____________________________________________________fit_transform - 8.2s, 0.1min
+<pre><code>____________________________________________________fit_transform - 7.3s, 0.1min
 ________________________________________________________________________________
 [Memory] Calling sklearn.manifold._mds.fit_transform...
 fit_transform(array([[0., ..., 0.],
@@ -556,18 +553,16 @@ fit_transform(array([[0., ..., 0.],
   warnings.warn(</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>__________________________________________________fit_transform - 100.2s, 1.7min</code></pre>
+<pre><code>___________________________________________________fit_transform - 65.2s, 1.1min</code></pre>
 </div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>Text(0.5, 1.0, 'Visualization by Sammon mapping.')</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="published-paper-tsne_files/figure-html/cell-2-output-6.png" width="470" height="931"></p>
+<p><img src="published-paper-tsne_files/figure-html/cell-2-output-6.svg" class="img-fluid"></p>
 </div>
 </div>
 <div class="cell" data-execution_count="2">
-<details open="">
-<summary>Hide/Show the code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">###############################################################################</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Figure 3. Visualization by Isomap and LLE</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co">###############################################################################</span></span>
@@ -617,7 +612,6 @@ fit_transform(array([[0., ..., 0.],
 <span id="cb8-47"><a href="#cb8-47" aria-hidden="true" tabindex="-1"></a>ax.set_xticks([])</span>
 <span id="cb8-48"><a href="#cb8-48" aria-hidden="true" tabindex="-1"></a>ax.set_yticks([])</span>
 <span id="cb8-49"><a href="#cb8-49" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Visualization by LLE."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>________________________________________________________________________________
 [Memory] Calling sklearn.manifold._isomap.fit_transform...
@@ -626,7 +620,7 @@ fit_transform(array([[0., ..., 0.],
        [0., ..., 0.]]))</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>____________________________________________________fit_transform - 2.2s, 0.0min
+<pre><code>____________________________________________________fit_transform - 1.9s, 0.0min
 ________________________________________________________________________________
 [Memory] Calling sklearn.manifold._locally_linear.fit_transform...
 fit_transform(array([[0., ..., 0.],
@@ -634,18 +628,16 @@ fit_transform(array([[0., ..., 0.],
        [0., ..., 0.]]))</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>____________________________________________________fit_transform - 0.4s, 0.0min</code></pre>
+<pre><code>____________________________________________________fit_transform - 0.2s, 0.0min</code></pre>
 </div>
 <div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>Text(0.5, 1.0, 'Visualization by LLE.')</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="published-paper-tsne_files/figure-html/cell-3-output-5.png" width="470" height="931"></p>
+<p><img src="published-paper-tsne_files/figure-html/cell-3-output-5.svg" class="img-fluid"></p>
 </div>
 </div>
 <div class="cell" data-execution_count="3">
-<details open="">
-<summary>Hide/Show the code</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">###############################################################################</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Figure 4. Visualization of the Olivetti faces data set</span></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co">###############################################################################</span></span>
@@ -755,7 +747,6 @@ fit_transform(array([[0., ..., 0.],
 <span id="cb13-107"><a href="#cb13-107" aria-hidden="true" tabindex="-1"></a>ax.set_xticks([])</span>
 <span id="cb13-108"><a href="#cb13-108" aria-hidden="true" tabindex="-1"></a>ax.set_yticks([])</span>
 <span id="cb13-109"><a href="#cb13-109" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Visualization by LLE."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>downloading Olivetti faces from https://ndownloader.figshare.com/files/5976027 to /home/runner/scikit_learn_data</code></pre>
 </div>
@@ -767,7 +758,7 @@ fit_transform(array([[0.309917, ..., 0.157025],
        [0.516529, ..., 0.384298]], dtype=float32))</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>____________________________________________________fit_transform - 2.1s, 0.0min
+<pre><code>____________________________________________________fit_transform - 1.6s, 0.0min
 ________________________________________________________________________________
 [Memory] Calling sklearn.manifold._mds.fit_transform...
 fit_transform(array([[0.309917, ..., 0.157025],
@@ -779,7 +770,7 @@ fit_transform(array([[0.309917, ..., 0.157025],
   warnings.warn(</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>____________________________________________________fit_transform - 3.5s, 0.1min
+<pre><code>____________________________________________________fit_transform - 2.1s, 0.0min
 ________________________________________________________________________________
 [Memory] Calling sklearn.manifold._isomap.fit_transform...
 fit_transform(array([[0.309917, ..., 0.157025],
@@ -787,7 +778,7 @@ fit_transform(array([[0.309917, ..., 0.157025],
        [0.516529, ..., 0.384298]], dtype=float32))</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>____________________________________________________fit_transform - 0.2s, 0.0min
+<pre><code>____________________________________________________fit_transform - 0.1s, 0.0min
 ________________________________________________________________________________
 [Memory] Calling sklearn.manifold._locally_linear.fit_transform...
 fit_transform(array([[0.309917, ..., 0.157025],
@@ -795,13 +786,13 @@ fit_transform(array([[0.309917, ..., 0.157025],
        [0.516529, ..., 0.384298]], dtype=float32))</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>____________________________________________________fit_transform - 0.2s, 0.0min</code></pre>
+<pre><code>____________________________________________________fit_transform - 0.1s, 0.0min</code></pre>
 </div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>Text(0.5, 1.0, 'Visualization by LLE.')</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="published-paper-tsne_files/figure-html/cell-4-output-9.png" width="625" height="635"></p>
+<p><img src="published-paper-tsne_files/figure-html/cell-4-output-9.svg" class="img-fluid"></p>
 </div>
 </div>
 <p>In Figures 2 and 3, we show the results of our experiments with t-SNE, Sammon mapping, Isomap, and LLE on the MNIST data set. The results reveal the strong performance of t-SNE compared to the other techniques. In particular, Sammon mapping constructs a “ball” in which only three classes (representing the digits 0, 1, and 7) are somewhat separated from the other classes. Isomap and LLE produce solutions in which there are large overlaps between the digit classes. In contrast, tSNE constructs a map in which the separation between the digit classes is almost perfect. Moreover, detailed inspection of the t-SNE map reveals that much of the local structure of the data (such as the orientation of the ones) is captured as well. This is illustrated in more detail in <a href="#sec-large-data">Section&nbsp;5</a> (see Figure 7). The map produced by t-SNE contains some points that are clustered with the wrong class, but most of these points correspond to distorted digits many of which are difficult to identify. Figure 4 shows the results of applying t-SNE, Sammon mapping, Isomap, and LLE to the Olivetti faces data set. Again, Isomap and LLE produce solutions that provide little insight into the class structure of the data. The map constructed by Sammon mapping is significantly better, since it models many of the members of each class fairly close together, but none of the classes are clearly separated in the Sammon map. In contrast, t-SNE does a much better job of revealing the natural classes in the data. Some individuals have their ten images split into two clusters, usually because a subset of the images have the head facing in a significantly different direction, or because they have a very different expression or glasses. For these individuals, it is not clear that their ten images form a natural class when using Euclidean distance in pixel space.</p>
