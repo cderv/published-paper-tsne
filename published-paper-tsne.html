@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.208">
+<meta name="generator" content="quarto-1.3.227">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -25,6 +25,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -88,11 +89,12 @@ code span.st { color: #4070a0; } /* String */
 code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+/* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
 }
-.hanging div.csl-entry {
+.hanging-indent div.csl-entry {
   margin-left:2em;
   text-indent:-2em;
 }
@@ -106,8 +108,7 @@ div.csl-right-inline {
 }
 div.csl-indent {
   margin-left: 2em;
-}
-</style>
+}</style>
 
 
 <script src="published-paper-tsne_files/libs/clipboard/clipboard.min.js"></script>
@@ -215,7 +216,7 @@ ISSN 2824-7795</p>
       <div>
       <div class="quarto-title-meta-heading">Modified</div>
       <div class="quarto-title-meta-contents">
-        <p class="date-modified">February 19, 2023</p>
+        <p class="date-modified">February 26, 2023</p>
       </div>
     </div>
       
@@ -252,32 +253,32 @@ ISSN 2824-7795</p>
     <h2 id="toc-title">Contents</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="toc-section-number">1</span>  Introduction</a></li>
-  <li><a href="#sec-sne" id="toc-sec-sne" class="nav-link" data-scroll-target="#sec-sne"><span class="toc-section-number">2</span>  Stochastic Neighbor Embedding</a></li>
-  <li><a href="#sec-tsne" id="toc-sec-tsne" class="nav-link" data-scroll-target="#sec-tsne"><span class="toc-section-number">3</span>  t-Distributed Stochastic Neighbor Embedding</a>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a></li>
+  <li><a href="#sec-sne" id="toc-sec-sne" class="nav-link" data-scroll-target="#sec-sne"><span class="header-section-number">2</span> Stochastic Neighbor Embedding</a></li>
+  <li><a href="#sec-tsne" id="toc-sec-tsne" class="nav-link" data-scroll-target="#sec-tsne"><span class="header-section-number">3</span> t-Distributed Stochastic Neighbor Embedding</a>
   <ul class="collapse">
-  <li><a href="#sec-symmetric_sne" id="toc-sec-symmetric_sne" class="nav-link" data-scroll-target="#sec-symmetric_sne"><span class="toc-section-number">3.1</span>  Symmetric SNE</a></li>
-  <li><a href="#sec-crowding" id="toc-sec-crowding" class="nav-link" data-scroll-target="#sec-crowding"><span class="toc-section-number">3.2</span>  The Crowding Problem</a></li>
-  <li><a href="#sec-heavy_tail" id="toc-sec-heavy_tail" class="nav-link" data-scroll-target="#sec-heavy_tail"><span class="toc-section-number">3.3</span>  Mismatched tails can compensate for mismatched dimensionalities</a></li>
-  <li><a href="#sec-optimization_methods_for_tsne" id="toc-sec-optimization_methods_for_tsne" class="nav-link" data-scroll-target="#sec-optimization_methods_for_tsne"><span class="toc-section-number">3.4</span>  Optimization methods for t-SNE</a></li>
+  <li><a href="#sec-symmetric_sne" id="toc-sec-symmetric_sne" class="nav-link" data-scroll-target="#sec-symmetric_sne"><span class="header-section-number">3.1</span> Symmetric SNE</a></li>
+  <li><a href="#sec-crowding" id="toc-sec-crowding" class="nav-link" data-scroll-target="#sec-crowding"><span class="header-section-number">3.2</span> The Crowding Problem</a></li>
+  <li><a href="#sec-heavy_tail" id="toc-sec-heavy_tail" class="nav-link" data-scroll-target="#sec-heavy_tail"><span class="header-section-number">3.3</span> Mismatched tails can compensate for mismatched dimensionalities</a></li>
+  <li><a href="#sec-optimization_methods_for_tsne" id="toc-sec-optimization_methods_for_tsne" class="nav-link" data-scroll-target="#sec-optimization_methods_for_tsne"><span class="header-section-number">3.4</span> Optimization methods for t-SNE</a></li>
   </ul></li>
-  <li><a href="#sec-experiments" id="toc-sec-experiments" class="nav-link" data-scroll-target="#sec-experiments"><span class="toc-section-number">4</span>  Experiments</a>
+  <li><a href="#sec-experiments" id="toc-sec-experiments" class="nav-link" data-scroll-target="#sec-experiments"><span class="header-section-number">4</span> Experiments</a>
   <ul class="collapse">
-  <li><a href="#sec-datasets" id="toc-sec-datasets" class="nav-link" data-scroll-target="#sec-datasets"><span class="toc-section-number">4.1</span>  Data Sets</a></li>
-  <li><a href="#sec-experimental_setup" id="toc-sec-experimental_setup" class="nav-link" data-scroll-target="#sec-experimental_setup"><span class="toc-section-number">4.2</span>  Experimental Setup</a></li>
-  <li><a href="#sec-results" id="toc-sec-results" class="nav-link" data-scroll-target="#sec-results"><span class="toc-section-number">4.3</span>  Results</a></li>
+  <li><a href="#sec-datasets" id="toc-sec-datasets" class="nav-link" data-scroll-target="#sec-datasets"><span class="header-section-number">4.1</span> Data Sets</a></li>
+  <li><a href="#sec-experimental_setup" id="toc-sec-experimental_setup" class="nav-link" data-scroll-target="#sec-experimental_setup"><span class="header-section-number">4.2</span> Experimental Setup</a></li>
+  <li><a href="#sec-results" id="toc-sec-results" class="nav-link" data-scroll-target="#sec-results"><span class="header-section-number">4.3</span> Results</a></li>
   </ul></li>
-  <li><a href="#sec-large-data" id="toc-sec-large-data" class="nav-link" data-scroll-target="#sec-large-data"><span class="toc-section-number">5</span>  Applying t-SNE to Large Data Sets</a></li>
-  <li><a href="#sec-discussion" id="toc-sec-discussion" class="nav-link" data-scroll-target="#sec-discussion"><span class="toc-section-number">6</span>  Discussion</a>
+  <li><a href="#sec-large-data" id="toc-sec-large-data" class="nav-link" data-scroll-target="#sec-large-data"><span class="header-section-number">5</span> Applying t-SNE to Large Data Sets</a></li>
+  <li><a href="#sec-discussion" id="toc-sec-discussion" class="nav-link" data-scroll-target="#sec-discussion"><span class="header-section-number">6</span> Discussion</a>
   <ul class="collapse">
-  <li><a href="#sec-comparison" id="toc-sec-comparison" class="nav-link" data-scroll-target="#sec-comparison"><span class="toc-section-number">6.1</span>  Comparison with Related Techniques</a></li>
-  <li><a href="#sec-weakness" id="toc-sec-weakness" class="nav-link" data-scroll-target="#sec-weakness"><span class="toc-section-number">6.2</span>  Weakness</a></li>
+  <li><a href="#sec-comparison" id="toc-sec-comparison" class="nav-link" data-scroll-target="#sec-comparison"><span class="header-section-number">6.1</span> Comparison with Related Techniques</a></li>
+  <li><a href="#sec-weakness" id="toc-sec-weakness" class="nav-link" data-scroll-target="#sec-weakness"><span class="header-section-number">6.2</span> Weakness</a></li>
   </ul></li>
-  <li><a href="#sec-conclusion" id="toc-sec-conclusion" class="nav-link" data-scroll-target="#sec-conclusion"><span class="toc-section-number">7</span>  Conclusions</a></li>
+  <li><a href="#sec-conclusion" id="toc-sec-conclusion" class="nav-link" data-scroll-target="#sec-conclusion"><span class="header-section-number">7</span> Conclusions</a></li>
   <li><a href="#acknowledgments" id="toc-acknowledgments" class="nav-link" data-scroll-target="#acknowledgments">Acknowledgments</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
-  <li><a href="#appendix-a-derivation-of-the-t-sne-gradient" id="toc-appendix-a-derivation-of-the-t-sne-gradient" class="nav-link" data-scroll-target="#appendix-a-derivation-of-the-t-sne-gradient">Appendix A: Derivation of the t-SNE gradient</a></li>
-  <li><a href="#appendix-b-analytical-solution-to-random-walk-probabilities" id="toc-appendix-b-analytical-solution-to-random-walk-probabilities" class="nav-link" data-scroll-target="#appendix-b-analytical-solution-to-random-walk-probabilities">Appendix B: Analytical Solution to Random Walk Probabilities</a></li>
+  
+  
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="published-paper-tsne.pdf"><i class="bi bi-file-pdf"></i>PDF (computo)</a></li></ul></div></nav>
 </div>
@@ -818,122 +819,122 @@ Geoffrey Hinton is a fellow of the Canadian Institute for Advanced Research, and
 </section>
 <section id="references" class="level1 unnumbered">
 <h1 class="unnumbered">References</h1>
-<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
-<div id="ref-arnoldi:principle" class="csl-entry" role="doc-biblioentry">
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-arnoldi:principle" class="csl-entry" role="listitem">
 Arnoldi, Walter Edwin. 1951. <span>“The Principle of Minimized Iterations in the Solution of the Matrix Eigenvalue Problem.”</span> <em>Quarterly of Applied Mathematics</em> 9 (1): 17–29.
 </div>
-<div id="ref-belkin:laplacian" class="csl-entry" role="doc-biblioentry">
+<div id="ref-belkin:laplacian" class="csl-entry" role="listitem">
 Belkin, Mikhail, and Partha Niyogi. 2001. <span>“Laplacian Eigenmaps and Spectral Techniques for Embedding and Clustering.”</span> In <em>Proceedings of the 14th International Conference on Neural Information Processing Systems: Natural and Synthetic</em>, 585–91. Advances in Neural Information Processing Systems. Cambridge, MA, USA: MIT Press.
 </div>
-<div id="ref-bengio:learning" class="csl-entry" role="doc-biblioentry">
+<div id="ref-bengio:learning" class="csl-entry" role="listitem">
 Bengio, Yoshua. 2009. <em>Learning Deep Architectures for AI</em>. Now Publishers Inc.
 </div>
-<div id="ref-biggs:algebraic" class="csl-entry" role="doc-biblioentry">
+<div id="ref-biggs:algebraic" class="csl-entry" role="listitem">
 Biggs, Norman. 1993. <em>Algebraic Graph Theory</em>. 67. Cambridge university press.
 </div>
-<div id="ref-chernoff:use" class="csl-entry" role="doc-biblioentry">
+<div id="ref-chernoff:use" class="csl-entry" role="listitem">
 Chernoff, Herman. 1973. <span>“The Use of Faces to Represent Points in k-Dimensional Space Graphically.”</span> <em>Journal of the American Statistical Association</em> 68 (342): 361–68. <a href="http://www.jstor.org/stable/2284077">http://www.jstor.org/stable/2284077</a>.
 </div>
-<div id="ref-cook:visualizing" class="csl-entry" role="doc-biblioentry">
+<div id="ref-cook:visualizing" class="csl-entry" role="listitem">
 Cook, James, Ilya Sutskever, Andriy Mnih, and Geoffrey Hinton. 2007. <span>“Visualizing Similarity Data with a Mixture of Maps.”</span> In <em>In Proceedings of the 11th International Conference on Artificial Intelligence and Statistics</em>, 2:67–74. PMLR.
 </div>
-<div id="ref-desilva:global" class="csl-entry" role="doc-biblioentry">
+<div id="ref-desilva:global" class="csl-entry" role="listitem">
 De Silva, Vin, and Joshua B Tenenbaum. 2002. <span>“Global Versus Local Methods in Nonlinear Dimensionality Reduction.”</span> In <em>Advances in Neural Information Processing Systems</em>, 15:705–12.
 </div>
-<div id="ref-demartines:curvilinear" class="csl-entry" role="doc-biblioentry">
+<div id="ref-demartines:curvilinear" class="csl-entry" role="listitem">
 Demartines, P., and J. Herault. 1997. <span>“Curvilinear Component Analysis: A Self-Organizing Neural Network for Nonlinear Mapping of Data Sets.”</span> <em>IEEE Transactions on Neural Networks</em> 8 (1): 148–54. <a href="https://doi.org/10.1109/72.554199">https://doi.org/10.1109/72.554199</a>.
 </div>
-<div id="ref-battista:algorithms" class="csl-entry" role="doc-biblioentry">
+<div id="ref-battista:algorithms" class="csl-entry" role="listitem">
 Di Battista, Giuseppe, Peter Eades, Roberto Tamassia, and Ioannis G Tollisi. 1994. <span>“Algorithms for Drawing Graphs: An Annotated Bibliography.”</span> <em>Computational Geometry</em> 4 (5): 235–82. https://doi.org/<a href="https://doi.org/10.1016/0925-7721(94)00014-X">https://doi.org/10.1016/0925-7721(94)00014-X</a>.
 </div>
-<div id="ref-doyle:random" class="csl-entry" role="doc-biblioentry">
+<div id="ref-doyle:random" class="csl-entry" role="listitem">
 Doyle, Peter G, and J Laurie Snell. 1984. <em>Random Walks and Electric Networks</em>. Vol. 22. American Mathematical Soc.
 </div>
-<div id="ref-ferreira:visual" class="csl-entry" role="doc-biblioentry">
+<div id="ref-ferreira:visual" class="csl-entry" role="listitem">
 Ferreira de Oliveira, M. C., and H. Levkowitz. 2003. <span>“From Visual Data Exploration to Visual Data Mining: A Survey.”</span> <em>IEEE Transactions on Visualization and Computer Graphics</em> 9 (3): 378–94. <a href="https://doi.org/10.1109/TVCG.2003.1207445">https://doi.org/10.1109/TVCG.2003.1207445</a>.
 </div>
-<div id="ref-fokkema:jacobi" class="csl-entry" role="doc-biblioentry">
+<div id="ref-fokkema:jacobi" class="csl-entry" role="listitem">
 Fokkema, Diederik R, Gerard LG Sleijpen, and Henk A Van der Vorst. 1998. <span>“Jacobi–Davidson Style QR and QZ Algorithms for the Reduction of Matrix Pencils.”</span> <em>SIAM Journal on Scientific Computing</em> 20 (1): 94–125.
 </div>
-<div id="ref-grady:random" class="csl-entry" role="doc-biblioentry">
+<div id="ref-grady:random" class="csl-entry" role="listitem">
 Grady, Leo. 2006. <span>“Random Walks for Image Segmentation.”</span> <em>IEEE Transactions on Pattern Analysis and Machine Intelligence</em> 28 (11): 1768–83.
 </div>
-<div id="ref-hinton:stochastic" class="csl-entry" role="doc-biblioentry">
+<div id="ref-hinton:stochastic" class="csl-entry" role="listitem">
 Hinton, Geoffrey E, and Sam Roweis. 2003. <span>“Stochastic Neighbor Embedding.”</span> In <em>Advances in Neural Information Processing Systems</em>, edited by S. Becker, S. Thrun, and K. Obermayer. Vol. 15. MIT Press. <a href="https://proceedings.neurips.cc/paper/2002/file/6150ccc6069bea6b5716254057a194ef-Paper.pdf">https://proceedings.neurips.cc/paper/2002/file/6150ccc6069bea6b5716254057a194ef-Paper.pdf</a>.
 </div>
-<div id="ref-hinton:reducing" class="csl-entry" role="doc-biblioentry">
+<div id="ref-hinton:reducing" class="csl-entry" role="listitem">
 Hinton, Geoffrey E, and Ruslan R Salakhutdinov. 2006. <span>“Reducing the Dimensionality of Data with Neural Networks.”</span> <em>Science</em> 313 (5786): 504–7.
 </div>
-<div id="ref-hotelling:analysis" class="csl-entry" role="doc-biblioentry">
+<div id="ref-hotelling:analysis" class="csl-entry" role="listitem">
 Hotelling, H. 1933. <span>“Analysis of a Complex of Statistical Variables into Principal Components.”</span> <em>Journal of Educational Psychology</em> 24: 498–520.
 </div>
-<div id="ref-jacobs:rates" class="csl-entry" role="doc-biblioentry">
+<div id="ref-jacobs:rates" class="csl-entry" role="listitem">
 Jacobs, Robert A. 1988. <span>“Increased Rates of Convergence Through Learning Rate Adaptation.”</span> <em>Neural Networks</em> 1 (4): 295–307.
 </div>
-<div id="ref-kakutani:dirichlet" class="csl-entry" role="doc-biblioentry">
+<div id="ref-kakutani:dirichlet" class="csl-entry" role="listitem">
 Kakutani, S. 1945. <span>“Markov Processes and the Dirichlet Problem.”</span> In <em>Proceedings of the Japan Academy</em>, 21:227–33.
 </div>
-<div id="ref-keim:designing" class="csl-entry" role="doc-biblioentry">
+<div id="ref-keim:designing" class="csl-entry" role="listitem">
 Keim, Daniel A. 2000. <span>“Designing Pixel-Oriented Visualization Techniques: Theory and Applications.”</span> <em>IEEE Transactions on Visualization and Computer Graphics</em> 6 (1): 59–78. <a href="https://doi.org/10.1109/2945.841121">https://doi.org/10.1109/2945.841121</a>.
 </div>
-<div id="ref-lafon:diffusion" class="csl-entry" role="doc-biblioentry">
+<div id="ref-lafon:diffusion" class="csl-entry" role="listitem">
 Lafon, Stephane, and Ann B Lee. 2006. <span>“Diffusion Maps and Coarse-Graining: A Unified Framework for Dimensionality Reduction, Graph Partitioning, and Data Set Parameterization.”</span> <em>IEEE Transactions on Pattern Analysis and Machine Intelligence</em> 28 (9): 1393–403.
 </div>
-<div id="ref-lee:robust" class="csl-entry" role="doc-biblioentry">
+<div id="ref-lee:robust" class="csl-entry" role="listitem">
 Lee, John Aldo, Amaury Lendasse, Nicolas Donckers, and Michel Verleysen. 2000. <span>“A Robust Nonlinear Projection Method.”</span> In <em>Proceedings of the 8th European Symposium on Artificial Neural Networks</em>, 13–20.
 </div>
-<div id="ref-lee:nonlinear2005" class="csl-entry" role="doc-biblioentry">
+<div id="ref-lee:nonlinear2005" class="csl-entry" role="listitem">
 Lee, John Aldo, and Michel Verleysen. 2005. <span>“Nonlinear Dimensionality Reduction of Data Manifolds with Essential Loops.”</span> <em>Neurocomputing</em> 67: 29–53.
 </div>
-<div id="ref-lee:nonlinear" class="csl-entry" role="doc-biblioentry">
+<div id="ref-lee:nonlinear" class="csl-entry" role="listitem">
 Lee, John A., and Michel Verleysen. 2007. <em>Nonlinear Dimensionality Reduction</em>. 1st ed. Springer Publishing Company, Incorporated.
 </div>
-<div id="ref-mardia:multivariate" class="csl-entry" role="doc-biblioentry">
+<div id="ref-mardia:multivariate" class="csl-entry" role="listitem">
 Mardia, Kent, KV, and J Bibby. 1979. <em>Multivariate Analysis</em>. Academic Press Amsterdam.
 </div>
-<div id="ref-meytlis:face" class="csl-entry" role="doc-biblioentry">
+<div id="ref-meytlis:face" class="csl-entry" role="listitem">
 Meytlis, Marsha, and Lawrence Sirovich. 2007. <span>“On the Dimensionality of Face Space.”</span> <em>IEEE Transactions on Pattern Analysis and Machine Intelligence</em> 29 (7): 1262–67.
 </div>
-<div id="ref-nadler:diffusion" class="csl-entry" role="doc-biblioentry">
+<div id="ref-nadler:diffusion" class="csl-entry" role="listitem">
 Nadler, B, S Lafon, RR Coifman, and IG Kevrekidis. 2006. <span>“Diffusion Maps, Spectral Clustering, and the Reaction Coordinates of Dynamical Systems.”</span> <em>Applied and Computational Harmonic Analysis: Special Issue on Diffusion Maps and Wavelets</em> 21: 113–27.
 </div>
-<div id="ref-nene:coil20" class="csl-entry" role="doc-biblioentry">
+<div id="ref-nene:coil20" class="csl-entry" role="listitem">
 Nene, Sameer A, Shree K Nayar, and Hiroshi Murase. 1996. <span>“Columbia Object Image Library (COIL-20).”</span> CUCS-005-96. Columbia University.
 </div>
-<div id="ref-roweis:nonlinear" class="csl-entry" role="doc-biblioentry">
+<div id="ref-roweis:nonlinear" class="csl-entry" role="listitem">
 Roweis, Sam T., and Lawrence K. Saul. 2000. <span>“<span class="nocase">Nonlinear Dimensionality Reduction by Locally Linear Embedding</span>.”</span> <em>Science</em> 290 (5500): 2323–26. <a href="https://doi.org/10.1126/science.290.5500.2323">https://doi.org/10.1126/science.290.5500.2323</a>.
 </div>
-<div id="ref-sammon:nonlinear" class="csl-entry" role="doc-biblioentry">
+<div id="ref-sammon:nonlinear" class="csl-entry" role="listitem">
 Sammon, J. W. 1969. <span>“A Nonlinear Mapping for Data Structure Analysis.”</span> <em>IEEE Transactions on Computers</em> C-18 (5): 401–9. <a href="https://doi.org/10.1109/T-C.1969.222678">https://doi.org/10.1109/T-C.1969.222678</a>.
 </div>
-<div id="ref-song:colored" class="csl-entry" role="doc-biblioentry">
+<div id="ref-song:colored" class="csl-entry" role="listitem">
 Song, Le, Alexander J Smola, Karsten M Borgwardt, and Arthur Gretton. 2008. <span>“Colored Maximum Variance Unfolding.”</span> In <em>Advances in Neural Information Processing Systems</em>, edited by J. Platt, D. Koller, Y. Singer, and S. Roweis. Vol. 20. Curran Associates, Inc. <a href="https://proceedings.neurips.cc/paper/2007/file/55a7cf9c71f1c9c495413f934dd1a158-Paper.pdf">https://proceedings.neurips.cc/paper/2007/file/55a7cf9c71f1c9c495413f934dd1a158-Paper.pdf</a>.
 </div>
-<div id="ref-street:nuclear" class="csl-entry" role="doc-biblioentry">
+<div id="ref-street:nuclear" class="csl-entry" role="listitem">
 Street, W. Nick, W. H. Wolberg, and O. L. Mangasarian. 1993. <span>“<span class="nocase">Nuclear feature extraction for breast tumor diagnosis</span>.”</span> In <em>Biomedical Image Processing and Biomedical Visualization</em>, edited by Raj S. Acharya and Dmitry B. Goldgof, 1905:861–70. International Society for Optics; Photonics; SPIE. <a href="https://doi.org/10.1117/12.148698">https://doi.org/10.1117/12.148698</a>.
 </div>
-<div id="ref-jaakola:partially" class="csl-entry" role="doc-biblioentry">
+<div id="ref-jaakola:partially" class="csl-entry" role="listitem">
 Szummer, Martin, and Tommi Jaakkola. 2002. <span>“Partially Labeled Classification with Markov Random Walks.”</span> <em>Advances in Neural Information Processing Systems</em> 14: 945–52.
 </div>
-<div id="ref-tenenbaum:global" class="csl-entry" role="doc-biblioentry">
+<div id="ref-tenenbaum:global" class="csl-entry" role="listitem">
 Tenenbaum, Joshua B., Vin de Silva, and John C. Langford. 2000. <span>“A Global Geometric Framework for Nonlinear Dimensionality Reduction.”</span> <em>Science</em> 290 (5500): 2319.
 </div>
-<div id="ref-torgerson:multidimensional" class="csl-entry" role="doc-biblioentry">
+<div id="ref-torgerson:multidimensional" class="csl-entry" role="listitem">
 Torgerson, W. S. 1952. <span>“Multidimensional Scaling: I. Theory and Method.”</span> <em>Psychometrika</em> 17: 401–19.
 </div>
-<div id="ref-vandermaaten:comparison" class="csl-entry" role="doc-biblioentry">
+<div id="ref-vandermaaten:comparison" class="csl-entry" role="listitem">
 Van Der Maaten, Laurens, Eric Postma, Jaap Van den Herik, et al. 2009. <span>“Dimensionality Reduction: A Comparative.”</span> <em>J Mach Learn Res</em> 10 (66-71): 13.
 </div>
-<div id="ref-weinberger:learning" class="csl-entry" role="doc-biblioentry">
+<div id="ref-weinberger:learning" class="csl-entry" role="listitem">
 Weinberger, Kilian Q., Fei Sha, and Lawrence K. Saul. 2004. <span>“Learning a Kernel Matrix for Nonlinear Dimensionality Reduction.”</span> In <em>Proceedings of the Twenty-First International Conference on Machine Learning</em>, 106. ICML ’04. New York, NY, USA: Association for Computing Machinery. <a href="https://doi.org/10.1145/1015330.1015345">https://doi.org/10.1145/1015330.1015345</a>.
 </div>
-<div id="ref-weinberger:graph" class="csl-entry" role="doc-biblioentry">
+<div id="ref-weinberger:graph" class="csl-entry" role="listitem">
 Weinberger, Kilian Q, Fei Sha, Qihui Zhu, and Lawrence K Saul. 2007. <span>“Graph Laplacian Regularization for Large-Scale Semidefinite Programming.”</span> In <em>Advances in Neural Information Processing Systems</em>, 1489–96.
 </div>
-<div id="ref-williams:connection" class="csl-entry" role="doc-biblioentry">
+<div id="ref-williams:connection" class="csl-entry" role="listitem">
 Williams, Christopher KI. 2002. <span>“On a Connection Between Kernel PCA and Metric Multidimensional Scaling.”</span> <em>Machine Learning</em> 46 (1): 11–19.
 </div>
-<div id="ref-zhu:semi" class="csl-entry" role="doc-biblioentry">
+<div id="ref-zhu:semi" class="csl-entry" role="listitem">
 Zhu, Xiaojin, Zoubin Ghahramani, and John D Lafferty. 2003. <span>“Semi-Supervised Learning Using Gaussian Fields and Harmonic Functions.”</span> In <em>Proceedings of the 20th International Conference on Machine Learning (ICML-03)</em>, 912–19.
 </div>
 </div>
@@ -942,7 +943,7 @@ Zhu, Xiaojin, Zoubin Ghahramani, and John D Lafferty. 2003. <span>“Semi-Superv
 
 
 
-<div id="quarto-appendix" class="default"><section id="appendix-a-derivation-of-the-t-sne-gradient" class="level1 appendix unnumbered"><h2 class="quarto-appendix-heading">Appendix A: Derivation of the t-SNE gradient</h2><div class="quarto-appendix-contents">
+<div id="quarto-appendix" class="default"><section id="appendix-a-derivation-of-the-t-sne-gradient" class="level1 appendix unnumbered"><h2 class="anchored quarto-appendix-heading">Appendix A: Derivation of the t-SNE gradient</h2><div class="quarto-appendix-contents">
 
 <p>t-SNE minimizes the Kullback-Leibler divergence between the joint probabilities <span class="math inline">p_{ij}</span> in the highdimensional space and the joint probabilities <span class="math inline">q_{ij}</span> in the low-dimensional space. The values of <span class="math inline">p_{ij}</span> are defined to be the symmetrized conditional probabilities, whereas the values of <span class="math inline">q_{ij}</span> are obtained by means of a Student-t distribution with one degree of freedom</p>
 <p><span class="math display">
@@ -990,7 +991,7 @@ Z &amp; = \sum_{k\neq \ell} \left(1 + d_{k\ell}^2 \right)^{-1}.
 <p><span class="math display">
 \frac{\partial C}{\partial y_i} = 4 \sum_j (p{ij} - q_{ij}) (1 + \|y_i - y_j\|^2)^{-1} (y_i - y_j).
 </span></p>
-</div></section><section id="appendix-b-analytical-solution-to-random-walk-probabilities" class="level1 appendix unnumbered"><h2 class="quarto-appendix-heading">Appendix B: Analytical Solution to Random Walk Probabilities</h2><div class="quarto-appendix-contents">
+</div></section><section id="appendix-b-analytical-solution-to-random-walk-probabilities" class="level1 appendix unnumbered"><h2 class="anchored quarto-appendix-heading">Appendix B: Analytical Solution to Random Walk Probabilities</h2><div class="quarto-appendix-contents">
 
 <p>Below, we describe the analytical solution to the random walk probabilities that are employed in the random walk version of t-SNE (<a href="#sec-large-data">Section&nbsp;5</a>). The solution is described in more detail <span class="citation" data-cites="grady:random">Grady (<a href="#ref-grady:random" role="doc-biblioref">2006</a>)</span>.</p>
 <p>It can be shown that computing the probability that a random walk initiated from a non-landmark point (on a graph that is specified by adjacency matrix W) first reaches a specific landmark point is equal to computing the solution to the combinatorial Dirichlet problem in which the boundary conditions are at the locations of the landmark points, the considered landmark point is fixed to unity, and the other landmarks points are set to zero <span class="citation" data-cites="kakutani:dirichlet">Kakutani (<a href="#ref-kakutani:dirichlet" role="doc-biblioref">1945</a>)</span> ; <span class="citation" data-cites="doyle:random">Doyle and Snell (<a href="#ref-doyle:random" role="doc-biblioref">1984</a>)</span>. In practice, the solution can thus be obtained by minimizing the combinatorial formulation of the Dirichlet integral</p>
@@ -1030,7 +1031,7 @@ L_N x_N = −B^\top.
 <li id="fn8"><p>In preliminary experiments, we found the performance of random walk t-SNE to be very robust under changes of <span class="math inline">k</span>.<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@article{vandermaaten2008,
-  author = {Laurens van der Maaten and Geoffrey Hinton},
+  author = {vanderMaaten, Laurens and Hinton, Geoffrey},
   publisher = {Société Française de Statistique},
   title = {Visualizing {Data} Using {t-SNE:} A Practical Computo Example
     (Mock)},
@@ -1061,9 +1062,9 @@ L_N x_N = −B^\top.
     techniques on almost all of the data sets. \textless
     br/\textgreater{}}
 }
-</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-vandermaaten2008" class="csl-entry quarto-appendix-citeas" role="doc-biblioentry">
-Laurens van der Maaten, and Geoffrey Hinton. 8AD. <span>“Visualizing
-Data Using t-SNE: A Practical Computo Example (Mock).”</span>
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-vandermaaten2008" class="csl-entry quarto-appendix-citeas" role="listitem">
+vanderMaaten, Laurens, and Geoffrey Hinton. 8AD. <span>“Visualizing Data
+Using t-SNE: A Practical Computo Example (Mock).”</span>
 <em>Computo</em>, August. <a href="https://computo.sfds.asso.fr/published-202301-boulin-clayton">https://computo.sfds.asso.fr/published-202301-boulin-clayton</a>.
 </div></div></section></div></main>
 <!-- /main column -->
@@ -1341,7 +1342,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
